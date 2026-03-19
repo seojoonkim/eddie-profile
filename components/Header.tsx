@@ -30,109 +30,27 @@ export default function Header() {
   };
 
   return (
-    <header
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 40,
-        padding: "16px 24px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        backdropFilter: scrolled ? "blur(16px)" : "none",
-        backgroundColor: scrolled
-          ? "color-mix(in srgb, var(--bg) 85%, transparent)"
-          : "transparent",
-        borderBottom: scrolled
-          ? "1px solid var(--border)"
-          : "1px solid transparent",
-        transition: "all 0.3s ease",
-      }}
-    >
-      <button
-        onClick={() => scrollTo("hero")}
-        style={{
-          background: "none",
-          border: "none",
-          color: "var(--text-primary)",
-          fontSize: "16px",
-          fontWeight: 600,
-          cursor: "pointer",
-          fontFamily: "inherit",
-          letterSpacing: "-0.02em",
-        }}
-      >
-        Eddie Chang
+    <header className={`header ${scrolled ? "header-scrolled" : ""}`}>
+      <button onClick={() => scrollTo("hero")} className="header-logo">
+        EC
       </button>
 
-      <nav style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
+      <nav className="header-nav">
         {["about", "career", "vision", "contact"].map((section) => (
           <button
             key={section}
             onClick={() => scrollTo(section)}
-            style={{
-              background: "none",
-              border: "none",
-              color: "var(--text-secondary)",
-              fontSize: "12px",
-              fontWeight: 500,
-              cursor: "pointer",
-              fontFamily: "inherit",
-              transition: "color 0.2s",
-              letterSpacing: "0.01em",
-              whiteSpace: "nowrap",
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "var(--text-primary)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "var(--text-secondary)")
-            }
+            className="header-link"
           >
             {t(section)}
           </button>
         ))}
 
-        {/* Locale toggle */}
-        <button
-          onClick={switchLocale}
-          style={{
-            background: "none",
-            border: "1px solid var(--border)",
-            color: "var(--text-secondary)",
-            fontSize: "11px",
-            fontWeight: 600,
-            padding: "4px 8px",
-            borderRadius: "4px",
-            cursor: "pointer",
-            fontFamily: "inherit",
-            transition: "all 0.2s",
-            letterSpacing: "0.02em",
-            whiteSpace: "nowrap",
-            flexShrink: 0,
-          }}
-        >
+        <button onClick={switchLocale} className="header-toggle">
           {locale === "ko" ? "EN" : "KR"}
         </button>
 
-        {/* Theme toggle — SVG */}
-        <button
-          onClick={toggleTheme}
-          style={{
-            background: "none",
-            border: "1px solid var(--border)",
-            color: "var(--text-secondary)",
-            padding: "5px",
-            borderRadius: "4px",
-            cursor: "pointer",
-            transition: "all 0.2s",
-            display: "flex",
-            alignItems: "center",
-            flexShrink: 0,
-          }}
-        >
+        <button onClick={toggleTheme} className="header-toggle">
           {theme === "light" ? (
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
@@ -152,6 +70,83 @@ export default function Header() {
           )}
         </button>
       </nav>
+
+      <style jsx>{`
+        .header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 40;
+          padding: 16px 24px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: all 0.3s ease;
+        }
+        .header-scrolled {
+          backdrop-filter: blur(16px);
+          background: color-mix(in srgb, var(--bg) 85%, transparent);
+          border-bottom: 1px solid var(--border);
+        }
+        .header-logo {
+          background: none;
+          border: none;
+          color: var(--text-primary);
+          font-size: 15px;
+          font-weight: 700;
+          cursor: pointer;
+          font-family: inherit;
+          letter-spacing: -0.02em;
+        }
+        .header-nav {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+        .header-link {
+          background: none;
+          border: none;
+          color: var(--text-secondary);
+          font-size: 12px;
+          font-weight: 500;
+          cursor: pointer;
+          font-family: inherit;
+          padding: 6px 10px;
+          border-radius: 6px;
+          transition: color 0.2s, background 0.2s;
+          white-space: nowrap;
+        }
+        .header-link:hover {
+          color: var(--text-primary);
+          background: var(--surface);
+        }
+        .header-toggle {
+          background: none;
+          border: none;
+          color: var(--text-secondary);
+          font-size: 11px;
+          font-weight: 600;
+          padding: 6px 10px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-family: inherit;
+          transition: color 0.2s, background 0.2s;
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+        }
+        .header-toggle:hover {
+          color: var(--text-primary);
+          background: var(--surface);
+        }
+        @media (max-width: 767px) {
+          .header { padding: 12px 16px; }
+          .header-nav { gap: 2px; }
+          .header-link { padding: 5px 8px; font-size: 11px; }
+          .header-toggle { padding: 5px 8px; font-size: 10px; }
+        }
+      `}</style>
     </header>
   );
 }
