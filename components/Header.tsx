@@ -30,14 +30,13 @@ export default function Header() {
   return (
     <header className={`site-header ${scrolled ? "site-header-scrolled" : ""}`}>
       <div className="header-inner">
-        <button onClick={() => scrollTo("hero")} className="header-logo">Eddie Chang</button>
         <nav className="header-nav">
           {["about", "career", "vision", "contact"].map((section) => (
             <button key={section} onClick={() => scrollTo(section)} className="header-link">
               {t(section)}
             </button>
           ))}
-          <button onClick={switchLocale} className="header-link">
+          <button onClick={switchLocale} className="header-link header-locale">
             {locale === "ko" ? "EN" : "한국어"}
           </button>
         </nav>
@@ -56,27 +55,31 @@ export default function Header() {
         .header-inner {
           max-width: 1200px; margin: 0 auto;
           padding: 20px 40px;
-          display: flex; justify-content: space-between; align-items: center;
+          display: flex; justify-content: center; align-items: center;
         }
-        .header-logo {
-          background: none; border: none;
-          color: #111; font-size: 14px; font-weight: 600;
-          cursor: pointer; font-family: inherit; letter-spacing: -0.02em;
+        .header-nav {
+          display: flex;
+          align-items: center;
+          gap: 4px;
         }
-        .header-nav { display: flex; align-items: center; gap: 4px; }
         .header-link {
           background: none; border: none;
-          color: #888; font-size: 13px; font-weight: 400;
+          color: #666; font-size: 13px; font-weight: 400;
           cursor: pointer; font-family: inherit;
-          transition: color 0.2s;
+          transition: color 0.15s;
           text-transform: capitalize; white-space: nowrap;
-          padding: 6px 10px; border-radius: 6px;
+          padding: 6px 12px; border-radius: 6px;
         }
-        .header-link:hover { color: #111; background: #F5F5F5; }
+        .header-link:hover { color: #0A0A0A; background: #F5F5F5; }
+        .header-locale {
+          margin-left: 12px;
+          font-weight: 500;
+          color: #999;
+        }
         @media (max-width: 767px) {
           .header-inner { padding: 12px 20px; }
           .header-nav { gap: 2px; }
-          .header-link { font-size: 11px; padding: 6px 6px; }
+          .header-link { font-size: 12px; padding: 6px 8px; }
         }
       `}</style>
     </header>
