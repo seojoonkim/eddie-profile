@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "title": "Eddie Chang | Co-CEO, KinoLights",
+    "description": "From patent attorney to VC director to content company Co-CEO. Eddie Chang's career story and vision."
+  },
+  "nav": {
+    "about": "About",
+    "career": "Career",
+    "vision": "Vision",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "Eddie Chang",
+    "nameEn": "장승룡",
+    "title": "Co-CEO, KinoLights",
+    "tagline": "A life where the journey is the reward. A career where judgment deepens.",
+    "sub": "Patent Attorney → VC Director → Content Company Co-CEO. At every turn, he chose deeper judgment.",
+    "cta": "Learn More"
+  },
+  "about": {
+    "sectionTitle": "About",
+    "oneLiner": "He observed, he understood, and then he jumped in.",
+    "p1": "Some people sprint toward a destination. Others find meaning in every step of the road. Eddie Chang is the latter.",
+    "p2": "Whether studying at the intersection of law and technology as a patent attorney, analyzing hundreds of startups as a venture capitalist, or joining the company he invested in three times as co-CEO — each phase was a complete experience in itself.",
+    "p3": "\"The journey itself is the reward.\" This phrase carries the weight of intense immersion rather than casual optimism.",
+    "tags": ["Patent Attorney", "VC", "CEO", "Content IP", "AI"]
+  },
+  "career": {
+    "sectionTitle": "Career",
+    "items": [
+      {
+        "period": "~2015",
+        "role": "Patent Attorney",
+        "org": "",
+        "copy": "Distilling technology into language, he developed the eye for true value.",
+        "detail": "Double-majored in Earth & Environmental Sciences and Mechanical Engineering at Seoul National University. Analyzed thousands of technologies at the intersection of law and technology, developing the instinct for which innovations could reshape markets."
+      },
+      {
+        "period": "2015 – 2018",
+        "role": "Investment Manager",
+        "org": "KB Investment",
+        "copy": "He learned to read the future through the grammar of finance.",
+        "detail": "Reading business plans, building financial models, sizing markets — he learned the foundational grammar of venture capital. From protecting technology to betting on technology — an expansion of perspective."
+      },
+      {
+        "period": "2020 – 2024",
+        "role": "Investment Director",
+        "org": "Kakao Ventures",
+        "copy": "Through high-density investing, he illuminated founders' blind spots.",
+        "detail": "Led dozens of investments at the frontline of Korea's early-stage startup ecosystem. Refined business models alongside founders, discussed hiring strategies, and crystallized his philosophy as a high-density investor."
+      },
+      {
+        "period": "2024.12 ~",
+        "role": "Co-CEO",
+        "org": "KinoLights",
+        "copy": "Three investments of conviction, now proven through hands-on leadership.",
+        "detail": "An OTT aggregation and content recommendation platform. From a ₩300M seed round to a ₩2B Series A and follow-on — proving the conviction of three consecutive investments through direct leadership."
+      }
+    ]
+  },
+  "vision": {
+    "sectionTitle": "Vision",
+    "quote": "Building a company that commands the entire content value chain.",
+    "sub": "IP Sourcing → Distribution → Viewing. KinoLights encompasses it all.",
+    "chain": [
+      {
+        "title": "IP Sourcing",
+        "desc": "Securing intellectual property — webtoons, web novels, scripts"
+      },
+      {
+        "title": "Distribution",
+        "desc": "Producing and distributing content as dramas, films, animations"
+      },
+      {
+        "title": "Viewing",
+        "desc": "The discovery hub across OTT platforms through aggregation & recommendation"
+      }
+    ],
+    "interests": [
+      {
+        "icon": "ai",
+        "title": "AI Coding Agents",
+        "desc": "Reshaping the software value chain"
+      },
+      {
+        "icon": "digital",
+        "title": "Digital Assets",
+        "desc": "The future of ownership and finance"
+      },
+      {
+        "icon": "content",
+        "title": "Content IP",
+        "desc": "Structural transformation of entertainment"
+      }
+    ]
+  },
+  "philosophy": {
+    "sectionTitle": "Philosophy",
+    "quote": "Through diverse experiences and sound thinking, becoming a wise person who makes better judgments."
+  },
+  "contact": {
+    "sectionTitle": "Contact",
+    "linkedin": "LinkedIn",
+    "kinolights": "KinoLights"
+  },
+  "footer": {
+    "rights": "© 2026 Eddie Chang. All rights reserved."
+  }
+}
