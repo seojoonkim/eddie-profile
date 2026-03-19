@@ -96,10 +96,13 @@
   },
   "philosophy": {
     "sectionTitle": "Philosophy",
-    "quote": "많은 경험과 건전한 사고방식으로, 더 좋은 판단을 하는 현명한 사람이 되는 것."
+    "quote": "많은 경험과 건전한 사고방식으로, 더 좋은 판단을 하는 현명한 사람이 되는 것.",
+    "description": "변리사로서 기술을, VC로서 사업을, 경영자로서 사람을 판단하는 법을 배웠다. 각각의 전환은 새로운 판단의 축을 더해주었고, 그 축들이 교차하는 지점에서 의사결정은 점점 더 정교해진다."
   },
   "contact": {
     "sectionTitle": "Contact",
+    "headline": "함께 이야기하고 싶으시다면",
+    "description": "콘텐츠 밸류체인의 미래, AI와 콘텐츠의 교차점, 그리고 좋은 판단에 대해 대화해보고 싶습니다.",
     "linkedin": "LinkedIn",
     "kinolights": "KinoLights"
   },

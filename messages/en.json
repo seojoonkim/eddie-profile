@@ -96,10 +96,13 @@
   },
   "philosophy": {
     "sectionTitle": "Philosophy",
-    "quote": "Through diverse experiences and sound thinking, becoming a wise person who makes better judgments."
+    "quote": "Through diverse experiences and sound thinking, becoming a wise person who makes better judgments.",
+    "description": "He learned to judge technology as a patent attorney, businesses as a VC, and people as a CEO. Each transition added a new axis to his decision-making, and at the intersection of those axes, his choices grow increasingly refined."
   },
   "contact": {
     "sectionTitle": "Contact",
+    "headline": "Let's Talk",
+    "description": "Whether it's about the future of the content value chain, the intersection of AI and content, or making better judgments — I'd love to connect.",
     "linkedin": "LinkedIn",
     "kinolights": "KinoLights"
   },
