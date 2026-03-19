@@ -2,24 +2,23 @@
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <p className="footer-text">
-        &copy; {new Date().getFullYear()} Seungryong Chang. All rights reserved.
+    <footer style={{
+      padding: "40px 40px", borderTop: "1px solid var(--border)",
+      display: "flex", justifyContent: "space-between", alignItems: "center",
+    }}>
+      <p style={{ fontSize: "12px", color: "var(--text-muted)" }}>
+        &copy; {new Date().getFullYear()} Seungryong Chang
       </p>
-
-      <style jsx>{`
-        .footer {
-          padding: 32px 24px;
-          background: var(--bg);
-          border-top: 1px solid var(--border);
-          text-align: center;
-        }
-        .footer-text {
-          font-size: 12px;
-          color: var(--text-secondary);
-          opacity: 0.6;
-        }
-      `}</style>
+      <a
+        href="https://kr.linkedin.com/in/seungryongchang"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ fontSize: "12px", color: "var(--text-muted)", textDecoration: "none", transition: "color 0.2s" }}
+        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")}
+        onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+      >
+        LinkedIn ↗
+      </a>
     </footer>
   );
 }
