@@ -10,12 +10,12 @@ export default function About() {
   return (
     <section style={{ padding: "120px 40px", borderTop: "1px solid #E0E0E0" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "80px", alignItems: "start" }}>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+        <div>
           <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8860B" }}>
             {t("sectionTitle")}
           </p>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} viewport={{ once: true }}>
+        </div>
+        <div>
           <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 700, color: "#0A0A0A", lineHeight: 1.4, letterSpacing: "-0.03em", marginBottom: "28px" }}>
             {t("oneLiner")}
           </h2>
@@ -31,7 +31,7 @@ export default function About() {
               </span>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
       <style jsx>{`
         @media (max-width: 767px) {
