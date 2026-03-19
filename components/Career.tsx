@@ -22,7 +22,7 @@ export default function Career() {
               onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
               style={{
                 padding: expandedIndex === i ? "24px 0 24px 16px" : "24px 0",
-                borderBottom: i < items.length - 1 ? "1px solid #E0E0E0" : "none",
+                borderBottom: "none",
                 cursor: "pointer",
                 borderLeft: expandedIndex === i ? "2px solid #B8860B" : "2px solid transparent",
                 marginLeft: expandedIndex === i ? "-18px" : "0",

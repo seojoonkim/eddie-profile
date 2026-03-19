@@ -7,7 +7,7 @@ export default function Vision() {
   const chain = t.raw("chain") as Array<{ title: string; desc: string }>;
 
   return (
-    <section style={{ padding: "120px 40px", borderTop: "1px solid #E0E0E0" }}>
+    <section style={{ padding: "120px 40px",  }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <div style={{ marginBottom: "64px" }}>
           <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8860B", marginBottom: "16px" }}>
