@@ -18,9 +18,9 @@ export default function Philosophy() {
 
   return (
     <section ref={ref} style={{ padding: "120px 40px" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "60px", alignItems: "start" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "48px", alignItems: "start" }}>
         <div className="scroll-reveal">
-          <p className="label-accent" style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8860B" }}>
+          <p className="label-accent" style={{ fontSize: "12px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8860B" }}>
             {t("sectionTitle")}
           </p>
         </div>

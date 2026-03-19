@@ -21,7 +21,7 @@ export default function Vision() {
     <section ref={ref} style={{ padding: "120px 40px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <div className="scroll-reveal" style={{ marginBottom: "64px" }}>
-          <p className="label-accent" style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8860B", marginBottom: "16px" }}>
+          <p className="label-accent" style={{ fontSize: "12px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8860B", marginBottom: "16px" }}>
             {t("sectionTitle")}
           </p>
           <h2 style={{ fontSize: "clamp(24px, 3.5vw, 40px)", fontWeight: 700, color: "#0A0A0A", lineHeight: 1.3, letterSpacing: "-0.03em", maxWidth: "700px" }}>
