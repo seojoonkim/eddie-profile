@@ -7,19 +7,19 @@ export default function Philosophy() {
   const t = useTranslations("philosophy");
 
   return (
-    <section className="philosophy-section">
-      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="philosophy-inner">
-        <p className="section-label">{t("sectionTitle")}</p>
-        <h2 className="philosophy-quote">{t("quote")}</h2>
-        <p className="philosophy-desc">{t("description")}</p>
+    <section style={{ padding: "120px 40px" }}>
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}
+        style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+        <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#D4A017", marginBottom: "24px" }}>
+          {t("sectionTitle")}
+        </p>
+        <h2 style={{ fontSize: "clamp(20px, 2.5vw, 28px)", fontWeight: 400, color: "#111", lineHeight: 1.6, letterSpacing: "-0.01em", marginBottom: "24px" }}>
+          {t("quote")}
+        </h2>
+        <p style={{ fontSize: "14px", color: "#888", lineHeight: 1.8 }}>{t("description")}</p>
       </motion.div>
       <style jsx>{`
-        .philosophy-section { padding: 120px 40px; }
-        .philosophy-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-        .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
-        .philosophy-quote { font-size: clamp(20px, 2.5vw, 28px); font-weight: 400; color: var(--text); line-height: 1.6; letter-spacing: -0.01em; margin-bottom: 24px; }
-        .philosophy-desc { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
-        @media (max-width: 767px) { .philosophy-section { padding: 64px 20px; } }
+        @media (max-width: 767px) { section { padding: 64px 20px !important; } }
       `}</style>
     </section>
   );
