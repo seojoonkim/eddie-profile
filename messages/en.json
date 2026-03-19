@@ -11,18 +11,18 @@
   },
   "hero": {
     "name": "Eddie Chang",
-    "nameEn": "장승룡",
+    "nameEn": "Seungryong Chang",
     "title": "Co-CEO, KinoLights",
     "tagline": "A life where the journey is the reward. A career where judgment deepens.",
-    "sub": "Patent Attorney → VC Director → Content Company Co-CEO. At every turn, he chose deeper judgment.",
+    "sub": "Patent Attorney → VC Director → Content Company Co-CEO. At every turn, I chose deeper judgment.",
     "cta": "Learn More"
   },
   "about": {
     "sectionTitle": "About",
-    "oneLiner": "He observed, he understood, and then he jumped in.",
-    "p1": "Some people sprint toward a destination. Others find meaning in every step of the road. Eddie Chang is the latter.",
-    "p2": "Whether studying at the intersection of law and technology as a patent attorney, analyzing hundreds of startups as a venture capitalist, or joining the company he invested in three times as co-CEO — each phase was a complete experience in itself.",
-    "p3": "\"The journey itself is the reward.\" This phrase carries the weight of intense immersion rather than casual optimism.",
+    "oneLiner": "I observed, I understood, and then I jumped in.",
+    "p1": "Hello, I'm Eddie Chang. I double-majored in Earth & Environmental Sciences and Mechanical Engineering at Seoul National University, and started my career as a patent attorney. From protecting technology through law, to connecting technology with capital, to now leading a content company — each step felt like a natural flow, but the journey within each step demanded intense dedication.",
+    "p2": "You can only know if a path was right in hindsight. I want to be the kind of person who finds meaning not in outcomes, but in the process itself. The grind of exam preparation, the tension of investment deals, the uncertainty of running a business — for me, all of these were different expressions of being fully alive.",
+    "p3": "Good judgment comes from diverse experience. And diverse experience comes from the courage to leap into new domains.",
     "tags": ["Patent Attorney", "VC", "CEO", "Content IP", "AI"]
   },
   "career": {
@@ -32,44 +32,44 @@
         "period": "~2015",
         "role": "Patent Attorney",
         "org": "",
-        "copy": "Distilling technology into language, he developed the eye for true value.",
-        "detail": "Double-majored in Earth & Environmental Sciences and Mechanical Engineering at Seoul National University, then earned his patent attorney license. Analyzed thousands of patents to internalize which innovations create defensible moats and which can fundamentally reshape markets. Learned to distill the essence of technology into precise language and witnessed how innovation collides and negotiates in real markets."
+        "copy": "Distilling technology into language, I developed the eye for true value.",
+        "detail": "After double-majoring in Earth & Environmental Sciences and Mechanical Engineering at Seoul National University, I earned my patent attorney license. Analyzing thousands of patents, I internalized which technologies create defensible moats and which can fundamentally reshape markets. The 'eye for evaluating technology' that I gained during this period became a weapon that runs through my entire career."
       },
       {
         "period": "2015 – 2018",
         "role": "Investment Manager",
         "org": "KB Investment",
-        "copy": "He learned to read the future through the grammar of finance.",
-        "detail": "Reading business plans, building financial models, sizing markets — he learned the foundational grammar of venture capital. Where his patent attorney years gave him the eye for technological value, this period added the investor's holistic ability to evaluate market timing, scale, and team execution. From protecting technology to betting on technology — a natural expansion of perspective."
+        "copy": "I learned to read the future through the grammar of finance.",
+        "detail": "Reading business plans, building financial models, sizing markets — I learned the foundational grammar of venture capital. Where my patent attorney years gave me the eye for technological value, this period added the investor's holistic ability to evaluate market timing, scale, and team execution. Three years at KB Investment taught me to read the future through numbers."
       },
       {
         "period": "2020 – 2024",
         "role": "Investment Director",
         "org": "Kakao Ventures",
-        "copy": "Through high-density investing, he illuminated founders' blind spots.",
-        "detail": "Joined Kakao Ventures as Investment Director and led dozens of early-stage investments over four years and seven months. Rather than casting a wide net, he embedded deeply in each investment — refining business models with founders, discussing hiring strategies, and sometimes joining customer interviews in person. His investment philosophy crystallized: 'A great investor doesn't just provide capital — they illuminate the blind spots that founders cannot see.'"
+        "copy": "Through high-density investing, I sought to illuminate founders' blind spots.",
+        "detail": "I joined Kakao Ventures as Investment Director and led dozens of early-stage investments over four years and seven months. Rather than casting a wide net, I embedded deeply in each investment — refining business models with founders, discussing hiring strategies, and sometimes joining customer interviews in person. My investment philosophy crystallized: 'A great investor doesn't just provide capital — they illuminate the blind spots that founders cannot see.'"
       },
       {
         "period": "2024.12 ~",
         "role": "Co-CEO",
         "org": "KinoLights",
         "copy": "Three investments of conviction, now proven through hands-on leadership.",
-        "detail": "An OTT aggregation and content recommendation platform. From a ₩300M seed round to a ₩2B Series A and follow-on — for a VC to invest in the same company three times means conviction that goes far beyond a positive assessment. With a team of 21, pursuing the grand vision of commanding the entire content value chain — from IP sourcing to distribution and viewing."
+        "detail": "I joined KinoLights — a company Kakao Ventures invested in three consecutive times — as Co-CEO. For a VC to invest in the same company three times means conviction that goes far beyond a positive assessment. With a team of 21, I'm pursuing the vision of commanding the entire content value chain — from IP sourcing to distribution and viewing."
       }
     ]
   },
   "vision": {
     "sectionTitle": "Vision",
-    "quote": "Building a company that commands the entire content value chain.",
+    "quote": "I want to build a company that commands the entire content value chain.",
     "sub": "IP Sourcing → Distribution → Viewing. KinoLights encompasses it all.",
     "chain": [
       {
         "title": "IP Sourcing",
-        "desc": "Securing intellectual property — webtoons, web novels, scripts"
+        "desc": "Securing content IP — webtoons, web novels, scripts"
       },
       {
         "title": "Distribution",
-        "desc": "Producing and distributing content as dramas, films, animations"
+        "desc": "Producing and distributing IP as dramas, films, animations"
       },
       {
         "title": "Viewing",
@@ -96,13 +96,13 @@
   },
   "philosophy": {
     "sectionTitle": "Philosophy",
-    "quote": "Through diverse experiences and sound thinking, becoming a wise person who makes better judgments.",
-    "description": "He learned to judge technology as a patent attorney, businesses as a VC, and people as a CEO. Each transition added a new axis to his decision-making, and at the intersection of those axes, his choices grow increasingly refined."
+    "quote": "I aspire to become a wise person who makes better judgments through diverse experiences and sound thinking.",
+    "description": "I've learned to judge technology as a patent attorney, businesses as a VC, and people as a CEO. Each transition added a new axis to my decision-making, and at the intersection of those axes, my choices grow increasingly multi-dimensional and refined."
   },
   "contact": {
     "sectionTitle": "Contact",
     "headline": "Let's Talk",
-    "description": "Whether it's about the future of the content value chain, the intersection of AI and content, or making better judgments — I'd love to connect.",
+    "description": "Whether it's about the future of the content value chain, the intersection of AI and content, or making better judgments — I'd love to connect. Feel free to reach out.",
     "linkedin": "LinkedIn",
     "kinolights": "KinoLights"
   },
