@@ -33,7 +33,7 @@ export default function Philosophy() {
           </p>
           <div className="scroll-reveal" style={{ transitionDelay: "0.2s" }}>
             {["question1", "question2", "question3"].map((key) => (
-              <div key={key} style={{ padding: "20px 0", borderTop: "1px solid #E0E0E0" }}>
+              <div key={key} style={{ padding: "20px 0", borderBottom: "1px solid #F0F0F0" }}>
                 <p style={{ fontSize: "16px", fontWeight: 400, color: "#0A0A0A", lineHeight: 1.7, fontStyle: "italic" }}>
                   {t(key)}
                 </p>
