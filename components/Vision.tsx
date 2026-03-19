@@ -8,84 +8,103 @@ export default function Vision() {
   const chain = t.raw("chain") as Array<{ title: string; desc: string }>;
 
   return (
-    <section id="vision" style={{ padding: "120px 40px", borderTop: "1px solid var(--border)" }}>
+    <section className="vision-section">
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        {/* Top: Quote */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          style={{ marginBottom: "64px" }}
+          className="vision-intro"
         >
-          <p style={{
-            fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em",
-            textTransform: "uppercase", color: "var(--text-muted)", marginBottom: "16px",
-          }}>
-            {t("sectionTitle")}
-          </p>
-          <h2 style={{
-            fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 600,
-            color: "var(--text)", lineHeight: 1.3, letterSpacing: "-0.03em",
-            maxWidth: "700px",
-          }}>
-            &ldquo;{t("quote")}&rdquo;
-          </h2>
-          <p style={{
-            fontSize: "16px", color: "var(--text-muted)", marginTop: "16px",
-          }}>
-            {t("sub")}
-          </p>
+          <p className="section-label">{t("sectionTitle")}</p>
+          <h2 className="vision-quote">&ldquo;{t("quote")}&rdquo;</h2>
+          <p className="vision-sub">{t("sub")}</p>
         </motion.div>
 
-        {/* Chain: horizontal layout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
           viewport={{ once: true }}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "1px",
-            background: "var(--border)",
-            borderRadius: "12px",
-            overflow: "hidden",
-          }}
+          className="vision-chain"
         >
           {chain.map((step, i) => (
-            <div key={i} style={{
-              padding: "32px 28px",
-              background: "var(--bg)",
-              position: "relative",
-            }}>
-              <span style={{
-                fontSize: "48px", fontWeight: 200, color: "var(--border)",
-                lineHeight: 1, display: "block", marginBottom: "16px",
-              }}>
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 style={{
-                fontSize: "15px", fontWeight: 600, color: "var(--text)",
-                marginBottom: "6px",
-              }}>
-                {step.title}
-              </h3>
-              <p style={{
-                fontSize: "13px", color: "var(--text-muted)", lineHeight: 1.6,
-              }}>
-                {step.desc}
-              </p>
+            <div key={i} className="vision-card">
+              <span className="vision-num">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="vision-card-title">{step.title}</h3>
+              <p className="vision-card-desc">{step.desc}</p>
             </div>
           ))}
         </motion.div>
       </div>
 
       <style jsx>{`
+        .vision-section {
+          padding: 120px 40px;
+          border-top: 1px solid var(--border);
+        }
+        .vision-intro {
+          margin-bottom: 64px;
+        }
+        .section-label {
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: var(--text-muted);
+          margin-bottom: 16px;
+        }
+        .vision-quote {
+          font-size: clamp(24px, 3.5vw, 40px);
+          font-weight: 600;
+          color: var(--text);
+          line-height: 1.3;
+          letter-spacing: -0.03em;
+          max-width: 700px;
+        }
+        .vision-sub {
+          font-size: 15px;
+          color: var(--text-muted);
+          margin-top: 14px;
+        }
+        .vision-chain {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1px;
+          background: var(--border);
+          border-radius: 12px;
+          overflow: hidden;
+        }
+        .vision-card {
+          padding: 28px 24px;
+          background: var(--bg);
+        }
+        .vision-num {
+          font-size: 44px;
+          font-weight: 200;
+          color: var(--border);
+          line-height: 1;
+          display: block;
+          margin-bottom: 14px;
+        }
+        .vision-card-title {
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--text);
+          margin-bottom: 4px;
+        }
+        .vision-card-desc {
+          font-size: 13px;
+          color: var(--text-muted);
+          line-height: 1.6;
+        }
         @media (max-width: 767px) {
-          section { padding: 80px 20px !important; }
-          div[style*="grid-template-columns: repeat(3"] {
-            grid-template-columns: 1fr !important;
+          .vision-section { padding: 64px 20px; }
+          .vision-intro { margin-bottom: 36px; }
+          .vision-chain {
+            grid-template-columns: 1fr;
+            border-radius: 8px;
           }
         }
       `}</style>

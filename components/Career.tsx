@@ -12,98 +12,139 @@ export default function Career() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
   return (
-    <section id="career" style={{ padding: "120px 40px" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "80px", alignItems: "start" }}>
-        {/* Left: Label */}
+    <section className="career-section">
+      <div className="career-grid">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p style={{
-            fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em",
-            textTransform: "uppercase", color: "var(--text-muted)",
-          }}>
-            {t("sectionTitle")}
-          </p>
+          <p className="section-label">{t("sectionTitle")}</p>
         </motion.div>
 
-        {/* Right: Timeline */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+        <div className="career-list">
           {items.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               viewport={{ once: true }}
-              style={{
-                padding: "28px 0",
-                borderBottom: i < items.length - 1 ? "1px solid var(--border)" : "none",
-                cursor: "pointer",
-              }}
+              className="career-item"
               onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
             >
-              {/* Period + Role */}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "8px" }}>
-                <h3 style={{
-                  fontSize: "18px", fontWeight: 600, color: "var(--text)",
-                  letterSpacing: "-0.01em",
-                }}>
+              <div className="career-header">
+                <h3 className="career-role">
                   {item.role}
-                  {item.org && (
-                    <span style={{ fontWeight: 400, color: "var(--text-muted)", marginLeft: "8px" }}>
-                      · {item.org}
-                    </span>
-                  )}
+                  {item.org && <span className="career-org"> · {item.org}</span>}
                 </h3>
-                <span style={{
-                  fontSize: "13px", color: "var(--text-muted)", fontWeight: 400,
-                  fontFamily: "var(--font-mono)", letterSpacing: "0.02em",
-                }}>
-                  {item.period}
-                </span>
+                <span className="career-period">{item.period}</span>
               </div>
-
-              {/* Copy */}
-              <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.6 }}>
-                {item.copy}
-              </p>
-
-              {/* Detail (expandable) */}
-              <div style={{
-                maxHeight: expandedIndex === i ? "300px" : "0",
-                overflow: "hidden",
-                transition: "max-height 0.4s ease",
-              }}>
-                <p style={{
-                  fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.7,
-                  marginTop: "16px",
-                }}>
-                  {item.detail}
-                </p>
+              <p className="career-copy">{item.copy}</p>
+              <div className={`career-detail-wrap ${expandedIndex === i ? "career-detail-open" : ""}`}>
+                <p className="career-detail">{item.detail}</p>
               </div>
-
-              {/* Toggle */}
-              <span style={{
-                fontSize: "12px", color: "var(--text-muted)",
-                marginTop: "8px", display: "inline-block",
-              }}>
-                {expandedIndex === i ? "−" : "+"}
-              </span>
+              <span className="career-toggle">{expandedIndex === i ? "−" : "+"}</span>
             </motion.div>
           ))}
         </div>
       </div>
 
       <style jsx>{`
+        .career-section {
+          padding: 120px 40px;
+        }
+        .career-grid {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          gap: 80px;
+          align-items: start;
+        }
+        .section-label {
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: var(--text-muted);
+        }
+        .career-list {
+          display: flex;
+          flex-direction: column;
+        }
+        .career-item {
+          padding: 24px 0;
+          border-bottom: 1px solid var(--border);
+          cursor: pointer;
+        }
+        .career-item:first-child {
+          padding-top: 0;
+        }
+        .career-item:last-child {
+          border-bottom: none;
+        }
+        .career-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          gap: 16px;
+          margin-bottom: 6px;
+        }
+        .career-role {
+          font-size: 17px;
+          font-weight: 600;
+          color: var(--text);
+          letter-spacing: -0.01em;
+        }
+        .career-org {
+          font-weight: 400;
+          color: var(--text-muted);
+        }
+        .career-period {
+          font-size: 13px;
+          color: var(--text-muted);
+          font-family: var(--font-mono);
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+        .career-copy {
+          font-size: 14px;
+          color: var(--text-muted);
+          line-height: 1.6;
+        }
+        .career-detail-wrap {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease;
+        }
+        .career-detail-open {
+          max-height: 400px;
+        }
+        .career-detail {
+          font-size: 13px;
+          color: var(--text-muted);
+          line-height: 1.7;
+          margin-top: 14px;
+        }
+        .career-toggle {
+          font-size: 14px;
+          color: var(--text-muted);
+          display: inline-block;
+          margin-top: 6px;
+        }
         @media (max-width: 767px) {
-          section { padding: 80px 20px !important; }
-          div[style*="grid-template-columns"] {
-            grid-template-columns: 1fr !important;
-            gap: 24px !important;
+          .career-section { padding: 64px 20px; }
+          .career-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
           }
+          .career-header {
+            flex-direction: column;
+            gap: 2px;
+          }
+          .career-role { font-size: 16px; }
         }
       `}</style>
     </section>
