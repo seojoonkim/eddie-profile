@@ -40,6 +40,7 @@ export default function Hero() {
           min-height: 100vh;
           display: flex;
           align-items: center;
+          justify-content: center;
           padding: 0 40px;
           background: #FFFFFF;
         }
@@ -50,6 +51,7 @@ export default function Hero() {
           grid-template-columns: 1fr 300px;
           gap: 60px;
           align-items: center;
+          margin: 0 auto;
           opacity: 0;
           transition: opacity 0.4s ease;
         }
