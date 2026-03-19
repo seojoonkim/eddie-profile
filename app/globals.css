@@ -3,11 +3,11 @@
 @theme inline {
   --color-bg: #FFFFFF;
   --color-bg-subtle: #FAFAFA;
-  --color-text: #111111;
-  --color-text-muted: #888888;
-  --color-accent: #D4A017;
-  --color-accent-soft: rgba(212, 160, 23, 0.06);
-  --color-border: #E8E8E8;
+  --color-text: #0A0A0A;
+  --color-text-muted: #666666;
+  --color-accent: #B8860B;
+  --color-accent-soft: rgba(184, 134, 11, 0.06);
+  --color-border: #E0E0E0;
 
   --font-sans: "Inter", "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;

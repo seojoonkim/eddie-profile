@@ -51,7 +51,7 @@ export default function Header() {
         .site-header-scrolled {
           backdrop-filter: blur(20px);
           background: rgba(255,255,255,0.9);
-          border-bottom-color: #E8E8E8;
+          border-bottom-color: #E0E0E0;
         }
         .header-inner {
           max-width: 1200px; margin: 0 auto;
@@ -72,7 +72,7 @@ export default function Header() {
           text-transform: capitalize; white-space: nowrap;
           padding: 6px 10px; border-radius: 6px;
         }
-        .header-link:hover { color: #111; background: #FAFAFA; }
+        .header-link:hover { color: #111; background: #F5F5F5; }
         @media (max-width: 767px) {
           .header-inner { padding: 12px 20px; }
           .header-nav { gap: 2px; }
