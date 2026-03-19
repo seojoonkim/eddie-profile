@@ -41,7 +41,7 @@ export default function Hero() {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0 40px;
+          padding: 100px 40px 60px;
           background: #FFFFFF;
         }
         .hero-inner {
@@ -124,10 +124,8 @@ export default function Hero() {
         }
         @media (max-width: 767px) {
           .hero-section {
-            padding: 0 28px !important;
+            padding: 90px 28px 40px !important;
             min-height: auto !important;
-            padding-top: 120px !important;
-            padding-bottom: 60px !important;
           }
           .hero-inner {
             grid-template-columns: 1fr !important;
