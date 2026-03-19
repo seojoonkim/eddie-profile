@@ -22,75 +22,84 @@ export default function Hero() {
         textAlign: "center",
         padding: "0 24px",
         position: "relative",
-        background:
-          "linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 90%, var(--accent)) 100%)",
+        backgroundColor: "var(--bg)",
       }}
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        style={{ maxWidth: "800px" }}
+        style={{ maxWidth: "700px" }}
       >
+        {/* Title */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-caption"
           style={{
             color: "var(--accent)",
-            fontSize: "16px",
-            fontWeight: 500,
-            marginBottom: "16px",
-            letterSpacing: "0.05em",
+            marginBottom: "20px",
+            letterSpacing: "0.1em",
             textTransform: "uppercase",
+            fontWeight: 600,
           }}
         >
           {t("title")}
         </motion.p>
 
-        <h1 className="text-hero-name-mobile" style={{ color: "var(--text-primary)", marginBottom: "8px" }}>
+        {/* Name */}
+        <h1
+          className="text-hero-name-mobile"
+          style={{
+            color: "var(--text-primary)",
+            marginBottom: "6px",
+          }}
+        >
           <span className="hidden-desktop">{t("name")}</span>
           <span className="hidden-mobile text-hero-name">{t("name")}</span>
         </h1>
 
+        {/* English name */}
         <p
           style={{
             color: "var(--text-secondary)",
-            fontSize: "20px",
+            fontSize: "18px",
             fontWeight: 400,
-            marginBottom: "32px",
+            marginBottom: "40px",
           }}
         >
           {t("nameEn")}
         </p>
 
+        {/* Tagline */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.7 }}
-          className="text-subheading-mobile"
           style={{
             color: "var(--text-primary)",
-            marginBottom: "20px",
-            maxWidth: "600px",
-            marginLeft: "auto",
-            marginRight: "auto",
+            fontSize: "clamp(18px, 3vw, 24px)",
+            fontWeight: 600,
+            marginBottom: "16px",
+            letterSpacing: "-0.02em",
+            lineHeight: 1.5,
           }}
         >
-          <span className="hidden-desktop">{t("tagline")}</span>
-          <span className="hidden-mobile text-subheading">{t("tagline")}</span>
+          {t("tagline")}
         </motion.h2>
 
+        {/* Sub */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.7 }}
           style={{
             color: "var(--text-secondary)",
-            fontSize: "16px",
-            lineHeight: "1.7",
+            fontSize: "15px",
+            lineHeight: "1.8",
             marginBottom: "48px",
-            maxWidth: "550px",
+            maxWidth: "480px",
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -98,6 +107,7 @@ export default function Hero() {
           {t("sub")}
         </motion.p>
 
+        {/* CTA */}
         <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -107,16 +117,15 @@ export default function Hero() {
         >
           {t("cta")}
           <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
             fill="none"
-            style={{ marginLeft: "4px" }}
           >
             <path
-              d="M8 3v10m0 0l4-4m-4 4L4 9"
+              d="M7 3v8m0 0l3-3m-3 3L4 8"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
@@ -138,16 +147,16 @@ export default function Hero() {
         }}
       >
         <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
           fill="none"
-          style={{ color: "var(--text-secondary)" }}
+          style={{ color: "var(--text-secondary)", opacity: 0.5 }}
         >
           <path
-            d="M12 5v14m0 0l-6-6m6 6l6-6"
+            d="M10 4v12m0 0l-4-4m4 4l4-4"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -155,19 +164,11 @@ export default function Hero() {
       </motion.div>
 
       <style jsx>{`
-        .hidden-mobile {
-          display: none;
-        }
-        .hidden-desktop {
-          display: inline;
-        }
+        .hidden-mobile { display: none; }
+        .hidden-desktop { display: inline; }
         @media (min-width: 768px) {
-          .hidden-mobile {
-            display: inline;
-          }
-          .hidden-desktop {
-            display: none;
-          }
+          .hidden-mobile { display: inline; }
+          .hidden-desktop { display: none; }
         }
       `}</style>
     </section>

@@ -41,12 +41,12 @@ export default function Header() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
         backgroundColor: scrolled
-          ? "color-mix(in srgb, var(--bg) 80%, transparent)"
+          ? "color-mix(in srgb, var(--bg) 85%, transparent)"
           : "transparent",
         borderBottom: scrolled
-          ? "1px solid color-mix(in srgb, var(--text-secondary) 10%, transparent)"
+          ? "1px solid var(--border)"
           : "1px solid transparent",
         transition: "all 0.3s ease",
       }}
@@ -57,16 +57,17 @@ export default function Header() {
           background: "none",
           border: "none",
           color: "var(--text-primary)",
-          fontSize: "18px",
+          fontSize: "16px",
           fontWeight: 600,
           cursor: "pointer",
           fontFamily: "inherit",
+          letterSpacing: "-0.02em",
         }}
       >
         Eddie Chang
       </button>
 
-      <nav style={{ display: "flex", alignItems: "center", gap: "24px" }}>
+      <nav style={{ display: "flex", alignItems: "center", gap: "20px" }}>
         {["about", "career", "vision", "contact"].map((section) => (
           <button
             key={section}
@@ -75,11 +76,12 @@ export default function Header() {
               background: "none",
               border: "none",
               color: "var(--text-secondary)",
-              fontSize: "14px",
+              fontSize: "13px",
               fontWeight: 500,
               cursor: "pointer",
               fontFamily: "inherit",
               transition: "color 0.2s",
+              letterSpacing: "0.01em",
             }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.color = "var(--text-primary)")
@@ -92,38 +94,60 @@ export default function Header() {
           </button>
         ))}
 
+        {/* Locale toggle */}
         <button
           onClick={switchLocale}
           style={{
             background: "none",
-            border: "1px solid color-mix(in srgb, var(--text-secondary) 30%, transparent)",
+            border: "1px solid var(--border)",
             color: "var(--text-secondary)",
-            fontSize: "13px",
-            fontWeight: 500,
-            padding: "6px 12px",
+            fontSize: "12px",
+            fontWeight: 600,
+            padding: "5px 10px",
             borderRadius: "6px",
             cursor: "pointer",
             fontFamily: "inherit",
             transition: "all 0.2s",
+            letterSpacing: "0.02em",
           }}
         >
           {locale === "ko" ? "EN" : "KR"}
         </button>
 
+        {/* Theme toggle — SVG */}
         <button
           onClick={toggleTheme}
           style={{
             background: "none",
-            border: "1px solid color-mix(in srgb, var(--text-secondary) 30%, transparent)",
+            border: "1px solid var(--border)",
             color: "var(--text-secondary)",
-            fontSize: "16px",
-            padding: "6px 10px",
+            padding: "6px 8px",
             borderRadius: "6px",
             cursor: "pointer",
             transition: "all 0.2s",
+            display: "flex",
+            alignItems: "center",
           }}
         >
-          {theme === "dark" ? "☀️" : "🌙"}
+          {theme === "light" ? (
+            /* Moon icon */
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+            </svg>
+          ) : (
+            /* Sun icon */
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          )}
         </button>
       </nav>
     </header>

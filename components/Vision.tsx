@@ -3,11 +3,48 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
-const INTEREST_ICONS: Record<string, string> = {
-  ai: "🤖",
-  digital: "💎",
-  content: "🎬",
-};
+/* ── SVG Icons ── */
+const ChainIcons = [
+  // 1: Search / IP Sourcing
+  <svg key="source" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="11" cy="11" r="8"/>
+    <path d="M21 21l-4.35-4.35"/>
+    <path d="M8 11h6"/>
+    <path d="M11 8v6"/>
+  </svg>,
+  // 2: Distribution
+  <svg key="dist" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="6" width="20" height="12" rx="2"/>
+    <path d="M12 12l5-3"/>
+    <path d="M12 12l5 3"/>
+    <path d="M12 12l-5 3"/>
+    <path d="M12 12l-5-3"/>
+  </svg>,
+  // 3: Viewing
+  <svg key="view" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="3" width="20" height="14" rx="2"/>
+    <path d="M8 21h8"/>
+    <path d="M12 17v4"/>
+  </svg>,
+];
+
+const InterestIcons = [
+  // AI
+  <svg key="ai" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2a4 4 0 014 4v2a4 4 0 01-8 0V6a4 4 0 014-4z"/>
+    <path d="M16 14a8 8 0 01-16 0"/>
+    <path d="M12 2v2"/>
+    <circle cx="12" cy="18" r="2"/>
+  </svg>,
+  // Digital Asset
+  <svg key="digital" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+  </svg>,
+  // Content
+  <svg key="content" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="5,3 19,12 5,21"/>
+  </svg>,
+];
 
 export default function Vision() {
   const t = useTranslations("vision");
@@ -18,55 +55,46 @@ export default function Vision() {
     desc: string;
   }>;
 
+  const interestIconMap: Record<number, React.ReactNode> = {
+    0: InterestIcons[0],
+    1: InterestIcons[1],
+    2: InterestIcons[2],
+  };
+
   return (
     <section
       id="vision"
       style={{
-        padding: "120px 24px",
+        padding: "100px 24px",
         backgroundColor: "var(--bg)",
       }}
     >
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "960px", margin: "0 auto" }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true, margin: "-100px" }}
-          style={{ textAlign: "center", marginBottom: "64px" }}
+          style={{ textAlign: "center", marginBottom: "56px" }}
         >
-          <p
-            style={{
-              color: "var(--accent)",
-              fontSize: "14px",
-              fontWeight: 600,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              marginBottom: "16px",
-            }}
-          >
+          <p className="text-section-label" style={{ color: "var(--accent)", marginBottom: "12px" }}>
             {t("sectionTitle")}
           </p>
 
           <h2
             style={{
               color: "var(--text-primary)",
-              fontSize: "clamp(24px, 4vw, 36px)",
+              fontSize: "clamp(22px, 3.5vw, 32px)",
               fontWeight: 700,
-              marginBottom: "16px",
-              lineHeight: 1.3,
+              marginBottom: "14px",
+              lineHeight: 1.4,
+              letterSpacing: "-0.02em",
             }}
           >
             &ldquo;{t("quote")}&rdquo;
           </h2>
 
-          <p
-            style={{
-              color: "var(--text-secondary)",
-              fontSize: "17px",
-              maxWidth: "600px",
-              margin: "0 auto",
-            }}
-          >
+          <p style={{ color: "var(--text-secondary)", fontSize: "16px", maxWidth: "500px", margin: "0 auto" }}>
             {t("sub")}
           </p>
         </motion.div>
@@ -79,90 +107,58 @@ export default function Vision() {
           viewport={{ once: true, margin: "-100px" }}
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "24px",
-            marginBottom: "80px",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "16px",
+            marginBottom: "64px",
           }}
         >
           {chain.map((step, i) => (
             <div
               key={i}
-              style={{
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                textAlign: "center",
-              }}
+              className="card"
+              style={{ textAlign: "center", position: "relative" }}
             >
               <div
-                className="card"
                 style={{
-                  width: "100%",
-                  textAlign: "center",
-                  borderColor:
-                    i === 2
-                      ? "color-mix(in srgb, var(--highlight) 40%, transparent)"
-                      : undefined,
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "10px",
+                  backgroundColor: i === 2 ? "var(--accent)" : "var(--surface)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 14px",
+                  color: i === 2 ? "white" : "var(--accent)",
                 }}
               >
-                <div
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "12px",
-                    background:
-                      i === 2
-                        ? "linear-gradient(135deg, var(--highlight), var(--accent))"
-                        : "color-mix(in srgb, var(--accent) 15%, transparent)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    margin: "0 auto 16px",
-                    fontSize: "20px",
-                    fontWeight: 700,
-                    color: i === 2 ? "white" : "var(--accent)",
-                  }}
-                >
-                  {i + 1}
-                </div>
-                <h3
-                  style={{
-                    color: "var(--text-primary)",
-                    fontSize: "18px",
-                    fontWeight: 600,
-                    marginBottom: "8px",
-                  }}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  style={{
-                    color: "var(--text-secondary)",
-                    fontSize: "15px",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  {step.desc}
-                </p>
+                {ChainIcons[i]}
               </div>
-              {/* Arrow connector (hidden on mobile) */}
-              {i < chain.length - 1 && (
-                <div
-                  style={{
-                    position: "absolute",
-                    right: "-18px",
-                    top: "50%",
-                    transform: "translateY(-50%)",
-                    color: "var(--accent)",
-                    fontSize: "20px",
-                    zIndex: 1,
-                  }}
-                  className="chain-arrow"
-                >
-                  →
-                </div>
-              )}
+              <h3
+                style={{
+                  color: "var(--text-primary)",
+                  fontSize: "16px",
+                  fontWeight: 600,
+                  marginBottom: "6px",
+                }}
+              >
+                {step.title}
+              </h3>
+              <p style={{ color: "var(--text-secondary)", fontSize: "14px", lineHeight: 1.6 }}>
+                {step.desc}
+              </p>
+              {/* Step number */}
+              <span
+                style={{
+                  position: "absolute",
+                  top: "12px",
+                  right: "14px",
+                  fontSize: "11px",
+                  fontWeight: 600,
+                  color: "var(--border)",
+                }}
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
             </div>
           ))}
         </motion.div>
@@ -175,33 +171,33 @@ export default function Vision() {
           viewport={{ once: true, margin: "-100px" }}
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "24px",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "16px",
           }}
         >
           {interests.map((item, i) => (
             <div key={i} className="card" style={{ textAlign: "center" }}>
               <div
-                style={{ fontSize: "36px", marginBottom: "16px" }}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "14px",
+                  color: "var(--accent)",
+                }}
               >
-                {INTEREST_ICONS[item.icon] || "🔮"}
+                {interestIconMap[i]}
               </div>
               <h3
                 style={{
                   color: "var(--text-primary)",
-                  fontSize: "18px",
+                  fontSize: "16px",
                   fontWeight: 600,
-                  marginBottom: "8px",
+                  marginBottom: "6px",
                 }}
               >
                 {item.title}
               </h3>
-              <p
-                style={{
-                  color: "var(--text-secondary)",
-                  fontSize: "15px",
-                }}
-              >
+              <p style={{ color: "var(--text-secondary)", fontSize: "14px" }}>
                 {item.desc}
               </p>
             </div>
@@ -212,10 +208,11 @@ export default function Vision() {
       <style jsx>{`
         @media (max-width: 767px) {
           section {
-            padding: 80px 16px !important;
+            padding: 64px 16px !important;
           }
-          .chain-arrow {
-            display: none !important;
+          div[style*="grid-template-columns: repeat(3"],
+          div[style*="gridTemplateColumns: repeat(3"] {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>
