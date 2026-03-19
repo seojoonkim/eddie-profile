@@ -1,28 +1,39 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useEffect, useRef } from "react";
 
 export default function Philosophy() {
   const t = useTranslations("philosophy");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      { threshold: 0.1 }
+    );
+    ref.current?.querySelectorAll(".scroll-reveal").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section style={{ padding: "120px 40px" }}>
+    <section ref={ref} style={{ padding: "120px 40px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "80px", alignItems: "start" }}>
-        <div>
-          <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8860B" }}>
+        <div className="scroll-reveal">
+          <p className="label-accent" style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8860B" }}>
             {t("sectionTitle")}
           </p>
         </div>
         <div>
-          <h2 style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 600, color: "#0A0A0A", lineHeight: 1.5, letterSpacing: "-0.02em", marginBottom: "20px" }}>
+          <h2 className="scroll-reveal" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 600, color: "#0A0A0A", lineHeight: 1.5, letterSpacing: "-0.02em", marginBottom: "20px" }}>
             {t("quote")}
           </h2>
-          <p style={{ fontSize: "15px", color: "#666", lineHeight: 1.8, marginBottom: "48px" }}>
+          <p className="scroll-reveal" style={{ fontSize: "15px", color: "#666", lineHeight: 1.8, marginBottom: "48px", transitionDelay: "0.1s" }}>
             {t("description")}
           </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+          <div className="scroll-reveal" style={{ transitionDelay: "0.2s" }}>
             {["question1", "question2", "question3"].map((key) => (
-              <div key={key} style={{ padding: "20px 0",  }}>
+              <div key={key} style={{ padding: "20px 0", borderTop: "1px solid #E0E0E0" }}>
                 <p style={{ fontSize: "16px", fontWeight: 400, color: "#0A0A0A", lineHeight: 1.7, fontStyle: "italic" }}>
                   {t(key)}
                 </p>

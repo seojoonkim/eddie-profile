@@ -1,24 +1,35 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Career() {
   const t = useTranslations("career");
   const items = t.raw("items") as Array<{ period: string; role: string; org: string; copy: string; detail: string; }>;
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      { threshold: 0.1 }
+    );
+    ref.current?.querySelectorAll(".scroll-reveal").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section style={{ padding: "120px 40px" }}>
+    <section ref={ref} style={{ padding: "120px 40px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "80px", alignItems: "start" }}>
-        <div>
-          <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8860B" }}>
+        <div className="scroll-reveal">
+          <p className="label-accent" style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8860B" }}>
             {t("sectionTitle")}
           </p>
         </div>
         <div>
           {items.map((item, i) => (
             <div key={i}
+              className={`career-active scroll-reveal`}
               onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
               style={{
                 padding: expandedIndex === i ? "24px 0 24px 16px" : "24px 0",
@@ -26,8 +37,8 @@ export default function Career() {
                 cursor: "pointer",
                 borderLeft: expandedIndex === i ? "2px solid #B8860B" : "2px solid transparent",
                 marginLeft: expandedIndex === i ? "-18px" : "0",
-                transition: "all 0.15s ease",
                 borderTop: "none", borderRight: "none",
+                transitionDelay: `${i * 0.08}s`,
               }}
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "16px", marginBottom: "6px" }}>
@@ -40,10 +51,10 @@ export default function Career() {
                 </span>
               </div>
               <p style={{ fontSize: "14px", color: "#666", lineHeight: 1.6 }}>{item.copy}</p>
-              <div style={{ maxHeight: expandedIndex === i ? "500px" : "0", overflow: "hidden", transition: "max-height 0.25s ease", opacity: expandedIndex === i ? 1 : 0 }}>
+              <div className={expandedIndex === i ? "career-expand open" : "career-expand"}>
                 <p style={{ fontSize: "13px", color: "#666", lineHeight: 1.7, marginTop: "14px" }}>{item.detail}</p>
               </div>
-              <span style={{ fontSize: "16px", color: "#B8860B", display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: "8px", width: "36px", height: "36px", borderRadius: "8px" }}>
+              <span className="hover-fade" style={{ fontSize: "16px", color: "#B8860B", display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: "8px", width: "36px", height: "36px", borderRadius: "8px" }}>
                 {expandedIndex === i ? "−" : "+"}
               </span>
             </div>
