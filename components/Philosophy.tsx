@@ -19,7 +19,7 @@ export default function Philosophy() {
         <p style={{ fontSize: "14px", color: "#888", lineHeight: 1.8 }}>{t("description")}</p>
       </motion.div>
       <style jsx>{`
-        @media (max-width: 767px) { section { padding: 64px 20px !important; } }
+        @media (max-width: 767px) { section { padding: 64px 28px !important; } }
       `}</style>
     </section>
   );

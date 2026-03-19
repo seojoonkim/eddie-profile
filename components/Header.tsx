@@ -74,7 +74,7 @@ export default function Header() {
         }
         .header-link:hover { color: #111; background: #FAFAFA; }
         @media (max-width: 767px) {
-          .header-inner { padding: 12px 16px; }
+          .header-inner { padding: 12px 20px; }
           .header-nav { gap: 2px; }
           .header-link { font-size: 11px; padding: 6px 6px; }
         }

@@ -36,7 +36,7 @@ export default function Vision() {
       </div>
       <style jsx>{`
         @media (max-width: 767px) {
-          section { padding: 64px 20px !important; }
+          section { padding: 64px 28px !important; }
           div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
         }
       `}</style>

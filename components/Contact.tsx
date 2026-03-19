@@ -30,7 +30,7 @@ export default function Contact() {
       </div>
       <style jsx>{`
         @media (max-width: 767px) {
-          section { padding: 64px 20px !important; }
+          section { padding: 64px 28px !important; }
           div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 20px !important; }
         }
       `}</style>

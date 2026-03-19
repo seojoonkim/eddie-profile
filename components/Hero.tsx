@@ -52,7 +52,7 @@ export default function Hero() {
 
       <style jsx>{`
         @media (max-width: 767px) {
-          section { padding: 0 20px 80px !important; min-height: auto !important; padding-top: 140px !important; }
+          section { padding: 0 28px 80px !important; min-height: auto !important; padding-top: 140px !important; }
         }
       `}</style>
     </section>
