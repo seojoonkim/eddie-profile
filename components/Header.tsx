@@ -30,6 +30,12 @@ export default function Header() {
   return (
     <header className={`site-header ${scrolled ? "site-header-scrolled" : ""}`}>
       <div className="header-inner">
+        {/* Left: Logo */}
+        <button onClick={() => scrollTo("hero")} className="header-logo">
+          Eddie Chang
+        </button>
+
+        {/* Center: Nav */}
         <nav className="header-nav">
           {["about", "career", "vision", "contact"].map((section) => (
             <button key={section} onClick={() => scrollTo(section)} className="header-link">
@@ -40,6 +46,9 @@ export default function Header() {
             {locale === "ko" ? "EN" : "한국어"}
           </button>
         </nav>
+
+        {/* Right: empty for balance */}
+        <div style={{ width: "100px" }} />
       </div>
       <style jsx>{`
         .site-header {
@@ -55,7 +64,14 @@ export default function Header() {
         .header-inner {
           max-width: 1200px; margin: 0 auto;
           padding: 20px 40px;
-          display: flex; justify-content: center; align-items: center;
+          display: flex; justify-content: space-between; align-items: center;
+        }
+        .header-logo {
+          background: none; border: none;
+          color: #0A0A0A; font-size: 14px; font-weight: 600;
+          cursor: pointer; font-family: inherit; letter-spacing: -0.02em;
+          width: 100px;
+          text-align: left;
         }
         .header-nav {
           display: flex;
@@ -80,6 +96,8 @@ export default function Header() {
           .header-inner { padding: 12px 20px; }
           .header-nav { gap: 2px; }
           .header-link { font-size: 12px; padding: 6px 8px; }
+          .header-logo { font-size: 13px; width: auto; }
+          div[style*="width: 100px"] { width: auto !important; }
         }
       `}</style>
     </header>
