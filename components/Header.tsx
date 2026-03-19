@@ -67,7 +67,7 @@ export default function Header() {
         Eddie Chang
       </button>
 
-      <nav style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+      <nav style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
         {["about", "career", "vision", "contact"].map((section) => (
           <button
             key={section}
@@ -76,12 +76,13 @@ export default function Header() {
               background: "none",
               border: "none",
               color: "var(--text-secondary)",
-              fontSize: "13px",
+              fontSize: "12px",
               fontWeight: 500,
               cursor: "pointer",
               fontFamily: "inherit",
               transition: "color 0.2s",
               letterSpacing: "0.01em",
+              whiteSpace: "nowrap",
             }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.color = "var(--text-primary)")
@@ -101,14 +102,16 @@ export default function Header() {
             background: "none",
             border: "1px solid var(--border)",
             color: "var(--text-secondary)",
-            fontSize: "12px",
+            fontSize: "11px",
             fontWeight: 600,
-            padding: "5px 10px",
-            borderRadius: "6px",
+            padding: "4px 8px",
+            borderRadius: "4px",
             cursor: "pointer",
             fontFamily: "inherit",
             transition: "all 0.2s",
             letterSpacing: "0.02em",
+            whiteSpace: "nowrap",
+            flexShrink: 0,
           }}
         >
           {locale === "ko" ? "EN" : "KR"}
@@ -121,22 +124,21 @@ export default function Header() {
             background: "none",
             border: "1px solid var(--border)",
             color: "var(--text-secondary)",
-            padding: "6px 8px",
-            borderRadius: "6px",
+            padding: "5px",
+            borderRadius: "4px",
             cursor: "pointer",
             transition: "all 0.2s",
             display: "flex",
             alignItems: "center",
+            flexShrink: 0,
           }}
         >
           {theme === "light" ? (
-            /* Moon icon */
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
             </svg>
           ) : (
-            /* Sun icon */
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="5"/>
               <line x1="12" y1="1" x2="12" y2="3"/>
               <line x1="12" y1="21" x2="12" y2="23"/>
