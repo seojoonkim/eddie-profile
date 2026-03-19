@@ -88,7 +88,7 @@ export default function Header() {
         .header-nav {
           display: flex;
           align-items: center;
-          gap: 28px;
+          gap: 4px;
         }
         .header-link {
           background: none;
@@ -101,23 +101,32 @@ export default function Header() {
           transition: color 0.2s;
           text-transform: capitalize;
           white-space: nowrap;
+          padding: 6px 10px;
+          border-radius: 6px;
         }
         .header-link:hover {
           color: var(--text);
+          background: var(--bg-subtle);
         }
         .header-icon {
           display: flex;
           align-items: center;
+          padding: 6px 8px;
+          border-radius: 6px;
+        }
+        .header-icon:hover {
+          background: var(--bg-subtle);
         }
         @media (max-width: 767px) {
           .header-inner {
-            padding: 14px 20px;
+            padding: 12px 16px;
           }
           .header-nav {
-            gap: 16px;
+            gap: 2px;
           }
           .header-link {
-            font-size: 12px;
+            font-size: 11px;
+            padding: 6px 6px;
           }
         }
       `}</style>

@@ -131,8 +131,17 @@ export default function Career() {
         .career-toggle {
           font-size: 14px;
           color: var(--text-muted);
-          display: inline-block;
-          margin-top: 6px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 8px;
+          width: 32px;
+          height: 32px;
+          border-radius: 6px;
+          transition: background 0.2s;
+        }
+        .career-toggle:hover {
+          background: var(--bg-subtle);
         }
         @media (max-width: 767px) {
           .career-section { padding: 64px 20px; }
@@ -145,6 +154,21 @@ export default function Career() {
             gap: 2px;
           }
           .career-role { font-size: 16px; }
+          .career-item {
+            padding: 20px 16px;
+            margin: 0 -16px;
+            border-radius: 8px;
+            transition: background 0.2s;
+          }
+          .career-item:active {
+            background: var(--bg-subtle);
+          }
+          .career-toggle {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            border-radius: 10px;
+          }
         }
       `}</style>
     </section>
