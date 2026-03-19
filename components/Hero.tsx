@@ -14,7 +14,7 @@ export default function Hero() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="hero-inner"
       >
-        <p className="hero-label">{t("title")}</p>
+        <p className="hero-greeting">{t("greeting")}</p>
         <h1 className="hero-name">{t("name")}</h1>
         <p className="hero-name-en">{t("nameEn")}</p>
         <h2 className="hero-tagline">{t("tagline")}</h2>
@@ -38,13 +38,12 @@ export default function Hero() {
           max-width: 640px;
           text-align: left;
         }
-        .hero-label {
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          color: var(--accent);
-          margin-bottom: 20px;
+        .hero-greeting {
+          font-size: clamp(20px, 3vw, 26px);
+          font-weight: 500;
+          color: var(--text-primary);
+          margin-bottom: 8px;
+          line-height: 1.4;
         }
         .hero-name {
           font-size: clamp(36px, 7vw, 56px);
@@ -57,7 +56,7 @@ export default function Hero() {
         .hero-name-en {
           font-size: 16px;
           color: var(--text-secondary);
-          margin-bottom: 32px;
+          margin-bottom: 36px;
         }
         .hero-tagline {
           font-size: clamp(17px, 3vw, 20px);
@@ -97,9 +96,6 @@ export default function Hero() {
           .hero {
             padding: 100px 20px 60px;
             min-height: auto;
-          }
-          .hero-inner {
-            text-align: left;
           }
         }
       `}</style>
